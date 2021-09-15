@@ -1,7 +1,6 @@
 {
   "root": true,
   "extends": [
-    "defaults",
     "airbnb",
     "prettier",
     "prettier/react"

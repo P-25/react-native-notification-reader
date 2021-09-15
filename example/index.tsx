@@ -2,14 +2,14 @@ import { AppRegistry } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { RNAndroidNotificationListenerHeadlessJsName } from 'react-native-android-notification-listener'
 
-import App from './App'
+import App from './src/App'
 import { name as appName } from './app.json'
 
 /**
  * Note that this method MUST return a Promise.
  * Is that why I'm using a async function here.
  */
-const headlessNotificationListener = async ({ notification }) => {
+const headlessNotificationListener = async ({ notification }: any) => {
     /**
      * This notification is a JSON string in the follow format:
      *  {

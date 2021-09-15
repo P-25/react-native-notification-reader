@@ -65,7 +65,7 @@ export default StyleSheet.create({
         height: 40,
         resizeMode: 'contain',
     },
-    buttomWrapper: {
+    buttonWrapper: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',

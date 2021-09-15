@@ -35,9 +35,9 @@
     "react-native": "^0.65.1"
   },
   "dependencies": {
-    "eslint": "^7.32.0",
     "@types/react-native": "^0.65.0",
     "@types/react-redux": "^7.1.18",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-node": "^0.3.6",
