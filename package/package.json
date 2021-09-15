@@ -1,0 +1,52 @@
+{
+  "name": "react-native-android-notification-listener",
+  "title": "React Native Android Notification Listener",
+  "version": "4.0.0",
+  "description": "React Native Android Notification Listener - Listen for status bar notifications from all applications",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrosimoes/react-native-android-notification-listener.git",
+    "baseUrl": "https://github.com/leandrosimoes/react-native--android-notification-listener"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "notification",
+    "listener"
+  ],
+  "author": {
+    "name": "Leandro Simões",
+    "email": "leandro.simoes@outlook.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-native": ">=0.65.1"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.65.1"
+  },
+  "dependencies": {
+    "eslint": "^7.32.0",
+    "@types/react-native": "^0.65.0",
+    "@types/react-redux": "^7.1.18",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-node": "^0.3.6",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.0"
+  }
+}

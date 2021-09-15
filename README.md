@@ -8,10 +8,6 @@ React Native Android Notification Listener is a library that allows you to liste
 
 ## Installation
 
-`$ yarn add react-native-android-notification-listener`
-
-or
-
 `$ npm install react-native-android-notification-listener`
 
 ## Auto linking (React Native >= 0.60)

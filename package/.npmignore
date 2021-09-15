@@ -1,0 +1,7 @@
+.codacy.yml
+.eslintrc
+.gitattributes
+.gitignore
+.prettierrc
+README.md
+node_modules/
