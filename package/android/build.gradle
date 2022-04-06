@@ -20,8 +20,16 @@ buildscript {
     }
 }
 
+
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
+
+def GRADLE_VERSION = Double.parseDouble("$gradle.gradleVersion")
+
+if (GRADLE_VERSION >= 7.0) {
+    apply plugin: 'maven-publish'
+} else {
+    apply plugin: 'maven'
+}
 
 // Matches values in recent template from React Native 0.59 / 0.60
 // https://github.com/facebook/react-native/blob/0.59-stable/template/android/build.gradle#L5-L9
@@ -130,10 +138,13 @@ afterEvaluate { project ->
 
     task installArchives(type: Upload) {
         configuration = configurations.archives
-        repositories.mavenDeployer {
-            // Deploy to react-native-event-bridge/maven, ready to publish to npm
-            repository url: "file://${projectDir}/../android/maven"
-            configureReactNativePom pom
+        
+        if (GRADLE_VERSION < 7.0) {
+            repositories.mavenDeployer {
+                // Deploy to react-native-event-bridge/maven, ready to publish to npm
+                repository url: "file://${projectDir}/../android/maven"
+                configureReactNativePom pom
+            }
         }
     }
 }
