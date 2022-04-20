@@ -23,5 +23,5 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         stale-issue-message: 'This issue it`s being marked as stale and will be automatically closed after 7 more days without any activity.'
         stale-pr-message: 'This PR it`s being marked as stale and will be automatically closed after 7 more days without any activity.'
-        stale-issue-label: 'Stale'
-        stale-pr-label: 'Stale'
+        stale-issue-label: 'stale'
+        stale-pr-label: 'stale'
