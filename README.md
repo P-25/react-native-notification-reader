@@ -10,35 +10,6 @@ React Native Android Notification Listener is a library that allows you to liste
 
 `$ npm install react-native-android-notification-listener`
 
-## Auto linking (React Native >= 0.60)
-
-For RN version >= 0.60 there is no need to link or add any configurations manually. React Native will take care of linking the library using auto link.
-
-## Manual linking (React Native < 0.60)
-
-RN version < 0.60 require a manual link and some manual configurations as you can see bellow
-
-### Manual link
-
-`$ react-native link react-native-android-notification-listener`
-
-### Manual installation
-
-Some of this configurations will be automatically handled by the manual link process, but it is rightly recomended to check manually each file to ensure that everything is properly configured.
-
-1.  Open the `android/app/src/main/java/[...]/MainApplication.java` file
-    *   Add `import com.lesimoes.androidnotificationlistener.RNAndroidNotificationListenerPackage;` to the imports session at the top of the file;
-    *   Add `new RNAndroidNotificationListenerPackage()` to the list returned by the `getPackages()` method;
-2.  Append the following lines to `android/settings.gradle` file:
-    ```java
-    include ':react-native-android-notification-listener'
-    project(':react-native-android-notification-listener').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-android-notification-listener/android')
-    ```
-3.  Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-    ```java
-    compile project(':react-native-android-notification-listener')
-    ```
-
 ## Usage
 
 ```javascript
@@ -54,7 +25,7 @@ RNAndroidNotificationListener.requestPermission()
 
 /**
  * Note that this method MUST return a Promise.
- * Is that why I'm using a async function here.
+ * Is that why I'm using an async function here.
  */
 const headlessNotificationListener = async ({ notification }) => {/**
      * This notification is a JSON string in the follow format:
@@ -80,14 +51,13 @@ const headlessNotificationListener = async ({ notification }) => {/**
      *      "image": string (base64), // WARNING! THIS MAY NOT WORK FOR SOME APPLICATIONS SUCH TELEGRAM AND WHATSAPP
      *  }
      * 
-     * Note that this properties depends on the sender configuration
-     * so many times a lot of them will be empty
+     * Note that these properties depend on the sender configuration so many times a lot of them will be empty
      */
     
     if (notification) {
         /**
-         * Here you could store the notifications in a external API.
-         * I'm using AsyncStorage here as an example.
+         * You could store the notifications in an external API.
+         * I'm using AsyncStorage in the example project.
          */
         
         ...
@@ -95,7 +65,7 @@ const headlessNotificationListener = async ({ notification }) => {/**
 }
 
 /**
- * This should be required early in the require sequence
+ * This should be required early in the sequence
  * to make sure the JS execution environment is setup before other
  * modules are required.
  * 
@@ -107,14 +77,14 @@ const headlessNotificationListener = async ({ notification }) => {/**
 AppRegistry.registerHeadlessTask(RNAndroidNotificationListenerHeadlessJsName,	() => headlessNotificationListener)
 ```
 
-For more details, se the `sample/` project in this repository
+For more details, see the `example/` project in this repository
 
 ## FAQ
 
 "There are some limitations regarding the use of the Headless JS by this module that I should care about?"
 
-Yes, there are some nuances that you should consern. For example, since Headless JS runs in a standalone "Task" you can't interact directly with it by the touch UI.
-For more information about using Headless JS in React Native, I sugest to you to take a look at the official documentation [here](https://reactnative.dev/docs/headless-js-android).
+Yes, there are some nuances that you should concern. For example, since Headless JS runs in a standalone "Task" you can't interact directly with it by the touch UI.
+For more information about using Headless JS in React Native, I suggest you take a look at the official documentation [here](https://reactnative.dev/docs/headless-js-android).
 
 ***
 
