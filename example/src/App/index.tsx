@@ -79,24 +79,24 @@ const Notification: React.FC<INotificationProps> = ({
                     )}
                 </View>
                 <View style={styles.notificationInfoWrapper}>
-                    <Text>{`app: ${app}`}</Text>
-                    <Text>{`title: ${title}`}</Text>
-                    <Text>{`text: ${text}`}</Text>
-                    {!!time && <Text>{`time: ${time}`}</Text>}
-                    {!!titleBig && <Text>{`titleBig: ${titleBig}`}</Text>}
-                    {!!subText && <Text>{`subText: ${subText}`}</Text>}
+                    <Text style={styles.textInfo}>{`app: ${app}`}</Text>
+                    <Text style={styles.textInfo}>{`title: ${title}`}</Text>
+                    <Text style={styles.textInfo}>{`text: ${text}`}</Text>
+                    {!!time && <Text style={styles.textInfo}>{`time: ${time}`}</Text>}
+                    {!!titleBig && <Text style={styles.textInfo}>{`titleBig: ${titleBig}`}</Text>}
+                    {!!subText && <Text style={styles.textInfo}>{`subText: ${subText}`}</Text>}
                     {!!summaryText && (
-                        <Text>{`summaryText: ${summaryText}`}</Text>
+                        <Text style={styles.textInfo}>{`summaryText: ${summaryText}`}</Text>
                     )}
-                    {!!bigText && <Text>{`bigText: ${bigText}`}</Text>}
+                    {!!bigText && <Text style={styles.textInfo}>{`bigText: ${bigText}`}</Text>}
                     {!!audioContentsURI && (
-                        <Text>{`audioContentsURI: ${audioContentsURI}`}</Text>
+                        <Text style={styles.textInfo}>{`audioContentsURI: ${audioContentsURI}`}</Text>
                     )}
                     {!!imageBackgroundURI && (
-                        <Text>{`imageBackgroundURI: ${imageBackgroundURI}`}</Text>
+                        <Text style={styles.textInfo}>{`imageBackgroundURI: ${imageBackgroundURI}`}</Text>
                     )}
                     {!!extraInfoText && (
-                        <Text>{`extraInfoText: ${extraInfoText}`}</Text>
+                        <Text style={styles.textInfo}>{`extraInfoText: ${extraInfoText}`}</Text>
                     )}
                 </View>
             </View>
