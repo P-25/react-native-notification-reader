@@ -7,6 +7,7 @@ import {
     AppState,
     View,
     FlatList,
+    ScrollView,
 } from 'react-native'
 import RNAndroidNotificationListener from 'react-native-android-notification-listener'
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -115,16 +116,10 @@ const App = () => {
         RNAndroidNotificationListener.requestPermission()
     }
 
-    const handleAppStateChange = async (nextAppState: string) => {
-        if (nextAppState === 'active') {
-            /**
-             * Check the user current notification permission status
-             */
-            RNAndroidNotificationListener.getPermissionStatus().then(
-                (status) => {
-                    setHasPermission(status !== 'denied')
-                }
-            )
+    const handleAppStateChange = async (nextAppState: string, force = false) => {
+        if (nextAppState === 'active' || force) {
+            const status = await RNAndroidNotificationListener.getPermissionStatus()
+            setHasPermission(status !== 'denied')
         }
     }
 
@@ -143,8 +138,6 @@ const App = () => {
     }
 
     useEffect(() => {
-        AppState.addEventListener('change', handleAppStateChange)
-
         clearInterval(interval)
 
         /**
@@ -154,9 +147,13 @@ const App = () => {
          */
         interval = setInterval(handleCheckNotificationInterval, 3000)
 
+        const listener = AppState.addEventListener('change', handleAppStateChange)
+
+        handleAppStateChange('', true)
+
         return () => {
             clearInterval(interval)
-            AppState.removeEventListener('change', handleAppStateChange)
+            listener.remove()
         }
     }, [])
 
@@ -185,7 +182,9 @@ const App = () => {
             </View>
             <View style={styles.notificationsWrapper}>
                 {lastNotification && !hasGroupedMessages && (
-                    <Notification {...lastNotification} />
+                    <ScrollView style={styles.scrollView}>
+                        <Notification {...lastNotification} />
+                    </ScrollView>
                 )}
                 {lastNotification && hasGroupedMessages && (
                     <FlatList

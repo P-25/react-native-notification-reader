@@ -1,28 +1,25 @@
 import { Dimensions, StyleSheet } from 'react-native'
 
-const { height } = Dimensions.get('screen')
-const FORM_HEIGHT = 250
+const { width } = Dimensions.get('screen')
 
 export default StyleSheet.create({
     container: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        height: FORM_HEIGHT,
-        marginTop: height / 2 - FORM_HEIGHT,
     },
     permissionStatus: {
         marginBottom: 20,
         fontSize: 18,
     },
     notificationsWrapper: {
-        flex: 2,
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 20,
     },
     notificationWrapper: {
         flexDirection: 'column',
-        width: 300,
+        width: width * 0.8,
         backgroundColor: '#f2f2f2',
         padding: 20,
         marginTop: 20,
@@ -66,8 +63,11 @@ export default StyleSheet.create({
         resizeMode: 'contain',
     },
     buttonWrapper: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        paddingVertical: 50
     },
+    scrollView: {
+        flex: 1,
+    }
 })
