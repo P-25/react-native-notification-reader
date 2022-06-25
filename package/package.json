@@ -1,7 +1,7 @@
 {
   "name": "react-native-android-notification-listener",
   "title": "React Native Android Notification Listener",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "React Native Android Notification Listener - Listen for status bar notifications from all applications",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leandrosimoes/react-native-android-notification-listener.git",
-    "baseUrl": "https://github.com/leandrosimoes/react-native--android-notification-listener"
+    "baseUrl": "https://github.com/leandrosimoes/react-native-android-notification-listener"
   },
   "keywords": [
     "react-native",

@@ -8,7 +8,12 @@ React Native Android Notification Listener is a library that allows you to liste
 
 ## Installation
 
-`$ npm install react-native-android-notification-listener`
+* For React Native greater or equal then 0.68.0 
+   - `$ yarn add react-native-android-notification-listener`
+* For React Native between 0.65.1 and 0.67.4 
+   - `$ yarn add react-native-android-notification-listener@4.0.2`
+* For React Native less then 0.65 
+   - `$ yarn add react-native-android-notification-listener@3.1.2`
 
 ## Usage
 
@@ -83,12 +88,12 @@ For more details, see the `example/` project in this repository
 
 "There are some limitations regarding the use of the Headless JS by this module that I should care about?"
 
-Yes, there are some nuances that you should concern. For example, since Headless JS runs in a standalone "Task" you can't interact directly with it by the touch UI.
+Yes, there are some nuances that you should concern about. For example, since Headless JS runs in a standalone "Task" you can't interact directly with it by the touch UI.
 For more information about using Headless JS in React Native, I suggest you take a look at the official documentation [here](https://reactnative.dev/docs/headless-js-android).
 
 ***
 
-"I keep receiving the warning `registerHeadlessTask or registerCancellableHeadlessTask called multiple times for same key '${taskKey}'`, is that a problem?
+"I keep receiving the warning `registerHeadlessTask or registerCancellableHeadlessTask called multiple times for the same key '${taskKey}'`, is that a problem?
 
 No, this warning is here, where you can see that the task providers are stored in a set, and there's no way to delete them, so react is just complaining about the fact that we are overwriting it.
 
