@@ -69,5 +69,8 @@ export default StyleSheet.create({
     },
     scrollView: {
         flex: 1,
+    },
+    textInfo: {
+        color: '#000'
     }
 })
