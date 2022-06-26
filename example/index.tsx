@@ -1,9 +1,10 @@
 import { AppRegistry } from 'react-native'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import { RNAndroidNotificationListenerHeadlessJsName } from 'react-native-android-notification-listener'
 
-import App from './src/App'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
 import { name as appName } from './app.json'
+import App from './src/App'
 
 /**
  * Note that this method MUST return a Promise.

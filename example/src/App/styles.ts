@@ -65,12 +65,12 @@ export default StyleSheet.create({
     buttonWrapper: {
         justifyContent: 'center',
         alignItems: 'center',
-        paddingVertical: 50
+        paddingVertical: 50,
     },
     scrollView: {
         flex: 1,
     },
     textInfo: {
-        color: '#000'
-    }
+        color: '#000',
+    },
 })

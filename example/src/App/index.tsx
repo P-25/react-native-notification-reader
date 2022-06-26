@@ -10,11 +10,12 @@ import {
     ScrollView,
 } from 'react-native'
 import RNAndroidNotificationListener from 'react-native-android-notification-listener'
+
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import styles from './styles'
 
-let interval:any = null
+let interval: any = null
 
 interface INotificationProps {
     time: string
@@ -82,21 +83,50 @@ const Notification: React.FC<INotificationProps> = ({
                     <Text style={styles.textInfo}>{`app: ${app}`}</Text>
                     <Text style={styles.textInfo}>{`title: ${title}`}</Text>
                     <Text style={styles.textInfo}>{`text: ${text}`}</Text>
-                    {!!time && <Text style={styles.textInfo}>{`time: ${time}`}</Text>}
-                    {!!titleBig && <Text style={styles.textInfo}>{`titleBig: ${titleBig}`}</Text>}
-                    {!!subText && <Text style={styles.textInfo}>{`subText: ${subText}`}</Text>}
-                    {!!summaryText && (
-                        <Text style={styles.textInfo}>{`summaryText: ${summaryText}`}</Text>
+                    {!!time && (
+                        <Text style={styles.textInfo}>{`time: ${time}`}</Text>
                     )}
-                    {!!bigText && <Text style={styles.textInfo}>{`bigText: ${bigText}`}</Text>}
+                    {!!titleBig && (
+                        <Text
+                            style={
+                                styles.textInfo
+                            }>{`titleBig: ${titleBig}`}</Text>
+                    )}
+                    {!!subText && (
+                        <Text
+                            style={
+                                styles.textInfo
+                            }>{`subText: ${subText}`}</Text>
+                    )}
+                    {!!summaryText && (
+                        <Text
+                            style={
+                                styles.textInfo
+                            }>{`summaryText: ${summaryText}`}</Text>
+                    )}
+                    {!!bigText && (
+                        <Text
+                            style={
+                                styles.textInfo
+                            }>{`bigText: ${bigText}`}</Text>
+                    )}
                     {!!audioContentsURI && (
-                        <Text style={styles.textInfo}>{`audioContentsURI: ${audioContentsURI}`}</Text>
+                        <Text
+                            style={
+                                styles.textInfo
+                            }>{`audioContentsURI: ${audioContentsURI}`}</Text>
                     )}
                     {!!imageBackgroundURI && (
-                        <Text style={styles.textInfo}>{`imageBackgroundURI: ${imageBackgroundURI}`}</Text>
+                        <Text
+                            style={
+                                styles.textInfo
+                            }>{`imageBackgroundURI: ${imageBackgroundURI}`}</Text>
                     )}
                     {!!extraInfoText && (
-                        <Text style={styles.textInfo}>{`extraInfoText: ${extraInfoText}`}</Text>
+                        <Text
+                            style={
+                                styles.textInfo
+                            }>{`extraInfoText: ${extraInfoText}`}</Text>
                     )}
                 </View>
             </View>
@@ -104,7 +134,7 @@ const Notification: React.FC<INotificationProps> = ({
     )
 }
 
-const App = () => {
+function App() {
     const [hasPermission, setHasPermission] = useState(false)
     const [lastNotification, setLastNotification] = useState<any>(null)
 
@@ -116,9 +146,13 @@ const App = () => {
         RNAndroidNotificationListener.requestPermission()
     }
 
-    const handleAppStateChange = async (nextAppState: string, force = false) => {
+    const handleAppStateChange = async (
+        nextAppState: string,
+        force = false
+    ) => {
         if (nextAppState === 'active' || force) {
-            const status = await RNAndroidNotificationListener.getPermissionStatus()
+            const status =
+                await RNAndroidNotificationListener.getPermissionStatus()
             setHasPermission(status !== 'denied')
         }
     }
@@ -147,7 +181,10 @@ const App = () => {
          */
         interval = setInterval(handleCheckNotificationInterval, 3000)
 
-        const listener = AppState.addEventListener('change', handleAppStateChange)
+        const listener = AppState.addEventListener(
+            'change',
+            handleAppStateChange
+        )
 
         handleAppStateChange('', true)
 
