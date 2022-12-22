@@ -1,7 +1,7 @@
 {
   "name": "react-native-android-notification-listener",
   "title": "React Native Android Notification Listener",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "React Native Android Notification Listener - Listen for status bar notifications from all applications",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -28,11 +28,11 @@
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {
-    "react": "^18.2.0",
+    "react": "^18.0.0",
     "react-native": ">=0.69.0"
   },
   "devDependencies": {
-    "react": "^18.2.0",
+    "react": "^18.0.0",
     "react-native": "^0.69.0",
     "@types/react-native": "^0.69.0",
     "@types/react-redux": "^7.1.24",
