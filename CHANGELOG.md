@@ -1,5 +1,12 @@
 # Changelog
 
+## v5.0.1
+
+### Fixes
+
+* Error on install dependencies using NPM
+* Closes https://github.com/leandrosimoes/react-native-android-notification-listener/issues/47
+
 ## v5.0.0
 
 ### Fixes
