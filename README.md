@@ -84,17 +84,21 @@ AppRegistry.registerHeadlessTask(RNAndroidNotificationListenerHeadlessJsName,	()
 
 For more details, see the `example/` project in this repository
 
-## FAQ
+## FAQ & Known issues
 
-"There are some limitations regarding the use of the Headless JS by this module that I should care about?"
+**There are some limitations regarding the use of the Headless JS by this module that I should care about?**
 
 Yes, there are some nuances that you should concern about. For example, since Headless JS runs in a standalone "Task" you can't interact directly with it by the touch UI.
 For more information about using Headless JS in React Native, I suggest you take a look at the official documentation [here](https://reactnative.dev/docs/headless-js-android).
 
 ***
 
-"I keep receiving the warning `registerHeadlessTask or registerCancellableHeadlessTask called multiple times for the same key '${taskKey}'`, is that a problem?
+**I keep receiving the warning `registerHeadlessTask or registerCancellableHeadlessTask called multiple times for the same key '${taskKey}'`, is that a problem?**
 
 No, this warning is here, where you can see that the task providers are stored in a set, and there's no way to delete them, so react is just complaining about the fact that we are overwriting it.
 
 ***
+
+**I allowed the notifications, and the module shows that the notifications are allowed but even then the notifications are not retrieved. There is anything else that I can do in this case?**
+
+It is known that old Android versions and device particularities sometimes require a reboot or even to be turned off completely and then turned on again to have the notification listener working properly.
