@@ -6,6 +6,7 @@ React Native Android Notification Listener is a library that allows you to liste
 [![npm version](https://badge.fury.io/js/react-native-android-notification-listener.svg)](https://badge.fury.io/js/react-native-android-notification-listener)
 ![Node.js Package](https://github.com/leandrosimoes/react-native-android-notification-listener/workflows/Node%2Ejs%20Package/badge.svg)
 [<img src="https://img.shields.io/badge/slack-@lesimoes/help-blue.svg?logo=slack">](https://lesimoes.slack.com/messages/C04JV5CRGJH) 
+[<img src="https://img.shields.io/badge/discord-@lesimoes/help-blue.svg?logo=discord">](https://discord.gg/7xegRfQjPz) 
 
 ## Installation
 
