@@ -25,3 +25,4 @@ jobs:
         stale-pr-message: 'This PR it`s being marked as stale and will be automatically closed after 7 more days without any activity.'
         stale-issue-label: 'stale'
         stale-pr-label: 'stale'
+        only-labels: 'bug,help wanted'
