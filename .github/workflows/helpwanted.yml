@@ -1,0 +1,29 @@
+name: Help Wanted
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  create-comment:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'help wanted'
+    steps:
+      - name: Create comment
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'create-comment'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Hello @${{ github.event.issue.user.login }}!
+
+            This issue was marked with the "help wanted" tag, and here you can find what that means:
+            
+            Since Android OS is present on lots of different devices, most of the issues cannot be tested on real devices, so we ask you to dig deeper as you can into the problem providing constant updates here on the issue with your progress.
+
+            If there is no activity on this issue for 60 days or more, it will be tagged as stale and after that, it will be automatically deleted if there are no more updates provided for 7 days.
+
+            Hope you understand that and keep helping the community!
+
+            Thanks!
