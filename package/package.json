@@ -10,21 +10,12 @@
         "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix && prettier -w .",
         "prepare": "cd .. && husky install && cd package"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/leandrosimoes/react-native-android-notification-listener.git",
-        "baseUrl": "https://github.com/leandrosimoes/react-native-android-notification-listener"
-    },
     "keywords": [
         "react-native",
         "android",
         "notification",
         "listener"
     ],
-    "author": {
-        "name": "Leandro Simões",
-        "email": "leandro.simoes@outlook.com"
-    },
     "license": "MIT",
     "licenseFilename": "LICENSE",
     "readmeFilename": "README.md",

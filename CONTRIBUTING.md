@@ -22,7 +22,3 @@ Fell free to open a PR with your modifications, but keep in mind that it will be
 ## Donating
 
 If this repository helped you in any aspect, consider to send a donation to the repository owner:
-
-* [GitHub Sponsor Page](https://github.com/sponsors/leandrosimoes)
-* [Buy Me A Coffee](https://www.buymeacoffee.com/leandrosimoes)
-* [More Info](https://lesimoes.dev)

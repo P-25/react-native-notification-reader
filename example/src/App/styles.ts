@@ -19,10 +19,10 @@ export default StyleSheet.create({
     },
     notificationWrapper: {
         flexDirection: 'column',
-        width: width * 0.8,
+        width: width * 0.92,
         backgroundColor: '#f2f2f2',
-        padding: 20,
-        marginTop: 20,
+        padding: 5,
+        marginTop: 5,
         borderRadius: 5,
         elevation: 2,
     },
@@ -61,11 +61,6 @@ export default StyleSheet.create({
         width: 40,
         height: 40,
         resizeMode: 'contain',
-    },
-    buttonWrapper: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingVertical: 50,
     },
     scrollView: {
         flex: 1,
