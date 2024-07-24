@@ -39,9 +39,9 @@ const headlessNotificationListener = async ({ notification }: any) => {
          * I'm using AsyncStorage here as an example.
          */
         
-        const list = ['whatsapp', 'fb', 'facebook', 'business', 'message', 'phone', 'call', 'sim', 'dial', 'system', 'meta', 'email', 'text', 'telegram', 'phone', 'contact', 'instagram', 'twitter'];
-        const titles = ['backup', 'spam'];
-        const texts = ['chats', 'messages'];
+        const list = ['whatsapp', 'fb', 'facebook', 'business', 'message', 'phone', 'call', 'sim', 'dial', 'system', 'meta', 'email', 'text', 'telegram', 'phone', 'contact', 'instagram', 'twitter', 'Whatsapp', 'WhatsApp', 'Facebook', 'FB', 'Message', 'Phone', 'Sim', 'Call', 'Instagram', 'Insta'];
+        const titles = ['backup', 'spam', 'Backup', 'Spam'];
+        const texts = ['chats', 'messages', 'Chats', 'Messages'];
         const notificationObj = JSON.parse(notification);
         const app = notificationObj.app;
         const title = notificationObj.title;
